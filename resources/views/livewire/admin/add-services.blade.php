@@ -25,6 +25,7 @@
                     <tr>
                         <th class="border border-gray-300 px-4 py-2 text-left text-gray-600 font-medium">Service Name</th>
                         <th class="border border-gray-300 px-4 py-2 text-left text-gray-600 font-medium">Price</th>
+                        <th class="border border-gray-300 px-4 py-2 text-left text-gray-600 font-medium">Category</th>
                         <th class="border border-gray-300 px-4 py-2 text-center text-gray-600 font-medium">Actions</th>
                     </tr>
                 </thead>
@@ -33,6 +34,7 @@
                         <tr class="hover:bg-gray-100">
                             <td class="border border-gray-300 px-4 py-2">{{ $service->name }}</td>
                             <td class="border border-gray-300 px-4 py-2">${{ number_format($service->price, 2) }}</td>
+                            <td class="border border-gray-300 px-4 py-2">{{ $service->category }}</td>
                             <td class="border border-gray-300 px-4 py-2 text-center">
                                 <button
                                     @click="openModal = true; @this.editService({{ $service->id }})"
@@ -88,6 +90,21 @@
                         class="w-full mt-1 px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none"
                         placeholder="Enter price" />
                     @error('price') <span class="text-red-500 text-sm">{{ $message }}</span> @enderror
+                </div>
+
+                <div class="mb-4">
+                    <label for="category" class="block text-sm font-medium text-gray-700">Category</label>
+                    <select
+                        id="category"
+                        class="w-full mt-1 px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none"
+                        wire:model="category">
+                        <option value="">Select Category</option>
+                        <option value="Hematology">Hematology</option>
+                        <option value="Serology">Serology</option>
+                        <option value="Clinical Microscopy">Clinical Microscopy</option>
+                        <option value="Immunology">Immunology</option>
+                        <option value="Clinical Chemistry">Clinical Chemistry</option>
+                    </select>
                 </div>
                 <!-- Buttons -->
                 <div class="flex justify-end">

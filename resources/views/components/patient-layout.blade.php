@@ -13,7 +13,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.1/flowbite.min.js"></script>
+
 
     <style>
         [x-cloak] {
@@ -28,6 +28,7 @@
     </style>
 
     @vite(['resources/css/app.css', 'resources/js/app.js'])
+    @livewireStyles
     @wireUiScripts
 </head>
 
@@ -79,7 +80,7 @@
         </div>
     </div>
 
-    <!-- Main Content -->
+
     <div class="relative flex justify-center mt-8">
         <div class="border-gray-200 rounded-lg dark:border-gray-700">
             <main>
@@ -89,8 +90,9 @@
     </div>
 
     <!-- Scripts -->
-    <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.10.5/dist/cdn.min.js" defer></script>
+    {{-- <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.10.5/dist/cdn.min.js" defer></script> --}}
 </body>
 
+
 </html>
-``
+

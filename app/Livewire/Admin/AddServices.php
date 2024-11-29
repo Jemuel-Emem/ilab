@@ -11,6 +11,7 @@ class AddServices extends Component
     use WithPagination;
 
     public $serviceName;
+    public $category;
     public $price;
     public $serviceId;
     public $isEditMode = false;
@@ -18,12 +19,14 @@ class AddServices extends Component
     protected $rules = [
         'serviceName' => 'required|string|max:255',
         'price' => 'required|numeric|min:0',
+        'category' => 'required|in:Hematology,Serology,Clinical Microscopy,Immunology,Clinical Chemistry',
     ];
 
     public function resetFields()
     {
         $this->serviceName = '';
         $this->price = '';
+        $this->category = '';
         $this->serviceId = null;
         $this->isEditMode = false;
     }
@@ -35,6 +38,7 @@ class AddServices extends Component
         Service::create([
             'name' => $this->serviceName,
             'price' => $this->price,
+            'category' => $this->category,
         ]);
 
         session()->flash('message', 'Service added successfully!');
@@ -46,6 +50,7 @@ class AddServices extends Component
         $service = Service::findOrFail($id);
         $this->serviceId = $service->id;
         $this->serviceName = $service->name;
+        $this->category = $service->category;
         $this->price = $service->price;
         $this->isEditMode = true;
     }
@@ -58,6 +63,7 @@ class AddServices extends Component
         $service->update([
             'name' => $this->serviceName,
             'price' => $this->price,
+            'category' => $this->category,
         ]);
 
         session()->flash('message', 'Service updated successfully!');

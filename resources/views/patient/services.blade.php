@@ -1,7 +1,7 @@
 <x-patient-layout>
     <div>
 
-        <div class="  h-cover">
+        <div class="  ">
             <livewire:patient.services />
         </div>
 
