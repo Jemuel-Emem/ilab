@@ -43,6 +43,10 @@ Route::middleware([
             return view('admin.index');
         })->name('Admindashboard');
 
+        Route::get('/Add-services', function(){
+            return view('admin.add-services');
+        })->name('adminadd');
+
 
      });
 
@@ -50,6 +54,10 @@ Route::middleware([
         Route::get('/dashboard', function(){
                return view('patient.index');
            })->name('user-dashboard');
+
+           Route::get('/services', function(){
+            return view('patient.services');
+        })->name('user.services');
     });
 
     Route::prefix('technician')->middleware('technician')->group(function(){

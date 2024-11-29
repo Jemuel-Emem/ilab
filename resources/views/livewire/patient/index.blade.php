@@ -10,10 +10,10 @@
                 Experience seamless medical diagnostics and health services. Your health, our priority.
             </p>
             <div class="mt-8 flex justify-center md:justify-start gap-4">
-                <a href="#services" class="bg-orange-500 text-white px-6 py-3 rounded-md shadow-lg hover:bg-orange-600 transition">
+                <a href="{{ route('user.services') }}" class="bg-orange-500 text-white px-6 py-3 rounded-md shadow-lg hover:bg-orange-600 transition">
                     Explore Services
                 </a>
-                <a href="#appointment" class="bg-cyan-700 text-white px-6 py-3 rounded-md shadow-lg hover:bg-cyan-800 transition">
+                <a href="{{ route('user.services') }}t" class="bg-cyan-700 text-white px-6 py-3 rounded-md shadow-lg hover:bg-cyan-800 transition">
                     Book Appointment
                 </a>
             </div>
