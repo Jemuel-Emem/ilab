@@ -3,42 +3,87 @@
 namespace App\Livewire\Patient;
 
 use App\Models\Service;
-use Livewire\Component;
+use App\Models\Appointment; // Import the Appointment model
 use Livewire\WithPagination;
+use WireUi\Traits\Actions;
+use Livewire\Component;
 
 class Services extends Component
 {
+    use Actions;
     use WithPagination;
-    public $category = '';
-    public $search = '';
 
-    protected $paginationTheme = 'tailwind';
-
+    public $search = ''; // Search term
+    public $category = ''; // Selected category
+    public $showModal = false; // Modal visibility
+    public $selectedService = null; // Holds the selected service details
+    public $appointmentDate = ''; // Appointment date field
+    public $notes = ''; // Additional notes for the appointment
 
     public function sasa()
     {
-
-
+        $this->resetPage();
     }
 
-
-    public function resetSearch()
+    public function selectService($serviceId)
     {
-        $this->search = '';
-        $this->resetPage();
+        $this->selectedService = Service::find($serviceId); // Fetch selected service
+        $this->showModal = true; // Show the modal
+    }
+
+    public function closeModal()
+    {
+        $this->showModal = false; // Hide the modal
+        $this->selectedService = null; // Reset selected service
+        $this->appointmentDate = ''; // Reset appointment date
+        $this->notes = ''; // Reset notes field
+    }
+
+    public function bookAppointment()
+    {
+        // Validate input fields
+        $this->validate([
+            'appointmentDate' => 'required|date',
+            'notes' => 'nullable|string|max:500',
+        ]);
+
+        // Create an appointment
+        Appointment::create([
+            'user_id' => auth()->id(), // Ensure the user is logged in
+            'service_id' => $this->selectedService->id,
+            'appointment_date' => $this->appointmentDate,
+            'notes' => $this->notes,
+        ]);
+
+        // Close the modal and reset the fields
+        $this->closeModal();
+
+        $this->dialog([
+            'title'       => 'Appointment Booked',
+            'description' => 'Your appointment has been successfully booked.',
+            'icon'        => 'success',
+        ]);
+
     }
 
     public function render()
     {
+        $search = '%' . $this->search . '%';
 
-        $services = Service::where('name', 'like', '%' . $this->search . '%')
-            ->where('category', 'like', '%' . $this->category . '%')
-            ->paginate(5);
+        // Fetch services based on search term and category filter
+        $services = Service::query()
+            ->when($this->category, function ($query) {
+                return $query->where('category', $this->category);
+            })
+            ->where('name', 'like', $search)
+            ->paginate(9);
 
-
+        // Fetch available categories for the filter
         $categories = Service::distinct()->pluck('category');
 
-        return view('livewire.patient.services', compact('services', 'categories'));
+        return view('livewire.patient.services', [
+            'services' => $services,
+            'categories' => $categories,
+        ]);
     }
-
 }

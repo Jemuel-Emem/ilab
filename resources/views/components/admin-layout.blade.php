@@ -34,7 +34,7 @@
 
 <body class="font-sans antialiased bg-gradient-to-tr from-bermuda via-white to-blue-100">
     <x-notifications position="top-right" />
-
+    <x-dialog />
     <!-- Sidebar -->
     <aside id="sidebar-multi-level-sidebar"
         class="fixed top-0 left-0 z-40 w-64 h-screen transition-transform -translate-x-full sm:translate-x-0 bg-cyan-600">

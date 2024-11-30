@@ -64,6 +64,14 @@ Route::middleware([
         Route::get('/dashboard', function(){
                return view('technician.index');
            })->name('Techniciandashboard');
+
+           Route::get('/dashboard.appointment', function(){
+            return view('technician.appointment');
+        })->name('Technician.appointment');
+
+        Route::get('/dashboard.patients', function(){
+            return view('technician.patients');
+        })->name('Technician.patients');
     });
 Route::view('profile', 'profile')
     ->middleware(['auth'])

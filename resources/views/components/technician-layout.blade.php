@@ -34,7 +34,7 @@
 
 <body class="font-sans antialiased bg-gradient-to-tr from-bermuda via-white to-blue-100">
     <x-notifications position="top-right" />
-
+    <x-dialog />
     <!-- Sidebar -->
     <aside id="sidebar-multi-level-sidebar"
         class="fixed top-0 left-0 z-40 w-64 h-screen transition-transform -translate-x-full sm:translate-x-0 bg-cyan-600">
@@ -56,18 +56,18 @@
                 </li>
 
                 <li>
-                    <a href="#" class="flex items-center p-3 text-white rounded-lg hover:bg-cyan-700 hover:shadow-lg transition">
+                    <a href="{{ route('Technician.appointment') }}" class="flex items-center p-3 text-white rounded-lg hover:bg-cyan-700 hover:shadow-lg transition">
+                        <i class="ri-projector-fill text-xl"></i>
+                        <span class="ml-4">Appointments</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="{{ route('Technician.patients') }}" class="flex items-center p-3 text-white rounded-lg hover:bg-cyan-700 hover:shadow-lg transition">
                         <i class="ri-profile-fill text-xl"></i>
                         <span class="ml-4">Patients</span>
                     </a>
                 </li>
 
-                <li>
-                    <a href="#" class="flex items-center p-3 text-white rounded-lg hover:bg-cyan-700 hover:shadow-lg transition">
-                        <i class="ri-projector-fill text-xl"></i>
-                        <span class="ml-4">Appointment</span>
-                    </a>
-                </li>
 
 
             </ul>
