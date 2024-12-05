@@ -50,7 +50,7 @@
             <nav class="hidden md:flex space-x-6">
                 <a href="{{ route('user-dashboard') }}" class="text-white text-sm hover:text-cyan-300">Home</a>
                 <a href="{{ route('user.services') }}" class="text-white text-sm hover:text-cyan-300">Services</a>
-                <a href="#" class="text-white text-sm hover:text-cyan-300">Appointment</a>
+                <a href="{{ route('app') }}" class="text-white text-sm hover:text-cyan-300">Appointment</a>
                 <a href="#" class="text-white text-sm hover:text-cyan-300">Medical History</a>
                 <a href="#" class="text-white text-sm hover:text-cyan-300">Payment</a>
 
@@ -72,7 +72,7 @@
             <!-- Mobile Menu (Dropdown) -->
             <nav x-show="open" x-cloak class="absolute top-full left-0 w-full bg-cyan-700 shadow-lg md:hidden">
                 <a href="{{ route('user.services') }}" class="block px-4 py-2 text-white hover:bg-cyan-600">Services</a>
-                <a href="#" class="block px-4 py-2 text-white hover:bg-cyan-600">Appointment</a>
+                <a href="{{route('app')}}" class="block px-4 py-2 text-white hover:bg-cyan-600">Appointment</a>
                 <a href="#" class="block px-4 py-2 text-white hover:bg-cyan-600">Medical History</a>
                 <a href="#" class="block px-4 py-2 text-white hover:bg-cyan-600">Payment</a>
                 <a href="{{ route('user-dashboard') }}" class="block px-4 py-2 text-white hover:bg-cyan-600">Home</a>

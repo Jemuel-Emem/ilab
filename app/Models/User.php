@@ -21,7 +21,7 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
-    ];
+    ]; 
     public function appointments()
     {
         return $this->hasMany(Appointment::class);

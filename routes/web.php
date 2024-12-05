@@ -58,6 +58,10 @@ Route::middleware([
            Route::get('/services', function(){
             return view('patient.services');
         })->name('user.services');
+
+        Route::get('/appointment', function(){
+            return view('patient.appointment');
+        })->name('app');
     });
 
     Route::prefix('technician')->middleware('technician')->group(function(){
@@ -72,6 +76,10 @@ Route::middleware([
         Route::get('/dashboard.patients', function(){
             return view('technician.patients');
         })->name('Technician.patients');
+
+        Route::get('/dashboard.payment', function(){
+            return view('technician.payment');
+        })->name('Technician.payment');
     });
 Route::view('profile', 'profile')
     ->middleware(['auth'])

@@ -61,13 +61,20 @@
                         <span class="ml-4">Appointments</span>
                     </a>
                 </li>
+
+
                 <li>
                     <a href="{{ route('Technician.patients') }}" class="flex items-center p-3 text-white rounded-lg hover:bg-cyan-700 hover:shadow-lg transition">
                         <i class="ri-profile-fill text-xl"></i>
                         <span class="ml-4">Patients</span>
                     </a>
                 </li>
-
+                <li>
+                    <a href="{{ route('Technician.payment') }}" class="flex items-center p-3 text-white rounded-lg hover:bg-cyan-700 hover:shadow-lg transition">
+                        <i class="ri-projector-fill text-xl"></i>
+                        <span class="ml-4">Payment</span>
+                    </a>
+                </li>
 
 
             </ul>
