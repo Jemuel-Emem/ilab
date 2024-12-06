@@ -31,7 +31,7 @@ class Payment extends Component
     {
 
         if ($this->selectedAppointment) {
-            $this->selectedAppointment->status = 'paid';
+            $this->selectedAppointment->payment_status = 'paid';
             $this->selectedAppointment->save();
 
 

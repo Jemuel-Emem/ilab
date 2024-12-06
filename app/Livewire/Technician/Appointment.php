@@ -35,7 +35,7 @@ class Appointment extends Component
                 'The appointment has been successfully approved, and a payment record has been created.'
             );
         } else {
-            // Error notification
+           
             $this->dialog()->error(
                 'Appointment Not Found',
                 'This appointment could not be found.'

@@ -15,6 +15,7 @@
                     <th class="py-2 px-4 border">Appointment Date</th>
                     <th class="py-2 px-4 border">Service</th>
                     <th class="py-2 px-4 border">Status</th>
+                    <th class="py-2 px-4 border">Payment Status</th>
                     <th class="py-2 px-4 border">Actions</th>
                 </tr>
             </thead>
@@ -25,8 +26,9 @@
                         <td class="py-2 px-4 border">{{ $appointment->appointment_date }}</td>
                         <td class="py-2 px-4 border">{{ $appointment->service->name }}</td> <!-- Display Service Name -->
                         <td class="py-2 px-4 border">{{ $appointment->status }}</td>
+                        <td class="py-2 px-4 border">{{ $appointment->payment_status }}</td>
                         <td class="py-2 px-4 border">
-                            <!-- Only show Approve and Decline buttons if status is pending -->
+
                             @if ($appointment->status !== 'approved' && $appointment->status !== 'declined')
                                 <button wire:click="approve({{ $appointment->id }})" class="px-4 py-2 bg-green-500 text-white rounded">
                                     Approve

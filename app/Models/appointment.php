@@ -13,7 +13,8 @@ class appointment extends Model
         'service_id',
         'appointment_date',
         'notes',
-        'status'
+        'status',
+        'payment_status'
     ];
 
 

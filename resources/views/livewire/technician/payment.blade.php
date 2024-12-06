@@ -20,8 +20,8 @@
                 </div>
 
                 <div class="mb-2">
-                    <strong class="text-gray-600">Status:</strong>
-                    <span class="text-green-600">{{ ucfirst($appointment->status) }}</span>
+                    <strong class="text-gray-600">Payment Status:</strong>
+                    <span class="text-green-600">{{ ucfirst($appointment->payment_status) }}</span>
                 </div>
             </div>
         @endforeach
@@ -56,8 +56,8 @@
                 </div>
 
                 <div class="mb-2">
-                    <strong class="text-gray-600">Status:</strong>
-                    <span class="text-green-600">{{ ucfirst($selectedAppointment->status) }}</span>
+                    <strong class="text-gray-600">Payment Status:</strong>
+                    <span class="text-green-600">{{ ucfirst($selectedAppointment->payment_status) }}</span>
                 </div>
 
                 <div class="flex justify-end mt-4">
