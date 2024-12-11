@@ -47,6 +47,10 @@ Route::middleware([
             return view('admin.add-services');
         })->name('adminadd');
 
+        Route::get('/Billing', function(){
+            return view('admin.billing');
+        })->name('admin-billing');
+
 
      });
 
@@ -62,6 +66,10 @@ Route::middleware([
         Route::get('/appointment', function(){
             return view('patient.appointment');
         })->name('app');
+
+        Route::get('/payment', function(){
+            return view('patient.payment');
+        })->name('payment');
     });
 
     Route::prefix('technician')->middleware('technician')->group(function(){

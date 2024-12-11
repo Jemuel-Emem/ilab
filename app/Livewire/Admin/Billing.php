@@ -1,12 +1,11 @@
 <?php
 
-namespace App\Livewire\Technician;
-
+namespace App\Livewire\Admin;
 use App\Models\Appointment;
 use App\Models\Payments;
 use Livewire\Component;
 
-class Payment extends Component
+class Billing extends Component
 {
     public $appointments;
     public $selectedAppointment;
@@ -47,12 +46,11 @@ class Payment extends Component
             ]);
         }
     }
-
-
     public function render()
     {
-        return view('livewire.technician.payment', [
+        return view('livewire.admin.billing', [
             'appointments' => $this->appointments
         ]);
+
     }
 }

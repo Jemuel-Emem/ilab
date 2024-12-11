@@ -69,12 +69,12 @@
                         <span class="ml-4">Patients</span>
                     </a>
                 </li>
-                <li>
+                {{-- <li>
                     <a href="{{ route('Technician.payment') }}" class="flex items-center p-3 text-white rounded-lg hover:bg-cyan-700 hover:shadow-lg transition">
                         <i class="ri-projector-fill text-xl"></i>
                         <span class="ml-4">Payment</span>
                     </a>
-                </li>
+                </li> --}}
 
 
             </ul>

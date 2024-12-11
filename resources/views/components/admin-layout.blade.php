@@ -75,7 +75,7 @@
                 </li>
 
                 <li>
-                    <a href="#" class="flex items-center p-3 text-white rounded-lg hover:bg-cyan-700 hover:shadow-lg transition">
+                    <a href="{{ route('admin-billing') }}" class="flex items-center p-3 text-white rounded-lg hover:bg-cyan-700 hover:shadow-lg transition">
                         <i class="ri-bill-fill text-xl"></i>
                         <span class="ml-4">Billing</span>
                     </a>
