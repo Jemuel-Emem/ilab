@@ -9,6 +9,8 @@
     <title>ILAB - Admin</title>
 
     <!-- Fonts -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
     <link rel="preconnect" href="https://fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.1/flowbite.min.js"></script>
@@ -61,14 +63,14 @@
                     </a>
                 </li>
                 <li>
-                    <a href="#" class="flex items-center p-3 text-white rounded-lg hover:bg-cyan-700 hover:shadow-lg transition">
+                    <a href="{{ route('admin-information') }}" class="flex items-center p-3 text-white rounded-lg hover:bg-cyan-700 hover:shadow-lg transition">
                         <i class="ri-profile-fill text-xl"></i>
                         <span class="ml-4">Patient Information</span>
                     </a>
                 </li>
 
                 <li>
-                    <a href="#" class="flex items-center p-3 text-white rounded-lg hover:bg-cyan-700 hover:shadow-lg transition">
+                    <a href="{{ route('admin-daily') }}" class="flex items-center p-3 text-white rounded-lg hover:bg-cyan-700 hover:shadow-lg transition">
                         <i class="ri-projector-fill text-xl"></i>
                         <span class="ml-4">Daily Transaction</span>
                     </a>

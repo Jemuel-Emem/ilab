@@ -19,7 +19,7 @@
                     <p class="text-gray-600 mb-2">
                         <i class="ri-money-dollar-circle-line text-gray-500 mr-2"></i>
                         <strong>Amount Paid:</strong>
-                        Php{{ number_format($payment->amount, 2) }}
+                        Php {{ number_format($payment->amount, 2) }}
                     </p>
 
 

@@ -21,12 +21,12 @@
         <!-- Table -->
         <div class="overflow-x-auto">
             <table class="min-w-full table-auto border-collapse border border-gray-200">
-                <thead class="bg-gray-200">
+                <thead class="bg-blue-600">
                     <tr>
-                        <th class="border border-gray-300 px-4 py-2 text-left text-gray-600 font-medium">Service Name</th>
-                        <th class="border border-gray-300 px-4 py-2 text-left text-gray-600 font-medium">Price</th>
-                        <th class="border border-gray-300 px-4 py-2 text-left text-gray-600 font-medium">Category</th>
-                        <th class="border border-gray-300 px-4 py-2 text-center text-gray-600 font-medium">Actions</th>
+                        <th class="border border-gray-300 px-4 py-2 text-left text-white font-medium">Service Name</th>
+                        <th class="border border-gray-300 px-4 py-2 text-left text-white font-medium">Price</th>
+                        <th class="border border-gray-300 px-4 py-2 text-left text-white font-medium">Category</th>
+                        <th class="border border-gray-300 px-4 py-2 text-center text-white font-medium">Actions</th>
                     </tr>
                 </thead>
                 <tbody>

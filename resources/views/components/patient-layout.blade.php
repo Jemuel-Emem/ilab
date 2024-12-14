@@ -51,7 +51,7 @@
                 <a href="{{ route('user-dashboard') }}" class="text-white text-sm hover:text-cyan-300">Home</a>
                 <a href="{{ route('user.services') }}" class="text-white text-sm hover:text-cyan-300">Services</a>
                 <a href="{{ route('app') }}" class="text-white text-sm hover:text-cyan-300">Appointment</a>
-                <a href="#" class="text-white text-sm hover:text-cyan-300">Medical History</a>
+                <a href="{{ route('med-history') }}" class="text-white text-sm hover:text-cyan-300">Medical History</a>
                 <a href="{{ route('payment') }}" class="text-white text-sm hover:text-cyan-300">Payment</a>
 
             </nav>

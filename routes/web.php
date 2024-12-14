@@ -51,6 +51,14 @@ Route::middleware([
             return view('admin.billing');
         })->name('admin-billing');
 
+        Route::get('/Patient-Information', function(){
+            return view('admin.patient-information');
+        })->name('admin-information');
+
+        Route::get('/Daily-Transaction', function(){
+            return view('admin.daily-transaction');
+        })->name('admin-daily');
+
 
      });
 
@@ -70,6 +78,10 @@ Route::middleware([
         Route::get('/payment', function(){
             return view('patient.payment');
         })->name('payment');
+
+        Route::get('/med-history', function(){
+            return view('patient.med-history');
+        })->name('med-history');
     });
 
     Route::prefix('technician')->middleware('technician')->group(function(){
