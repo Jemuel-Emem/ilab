@@ -78,6 +78,7 @@ class AddServices extends Component
         session()->flash('message', 'Service deleted successfully!');
     }
 
+
     public function render()
     {
         $services = Service::paginate(10);

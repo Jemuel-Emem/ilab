@@ -1,7 +1,8 @@
 <?php
 use App\Http\Controllers\AuthController;
 use Illuminate\Support\Facades\Route;
-
+use App\Livewire\Admin\AddServices;
+use Livewire\Livewire;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -59,9 +60,14 @@ Route::middleware([
             return view('admin.daily-transaction');
         })->name('admin-daily');
 
+         Route::get('/Print', function(){
+             return view('livewire.admin.print-services');
+         })->name('printServices');
+
+
 
      });
-
+    //  Route::get('/admin/services/print', [AddServices::class, 'print'])->name('printServices');
      Route::prefix('patient')->middleware('patient')->group(function(){
         Route::get('/dashboard', function(){
                return view('patient.index');
