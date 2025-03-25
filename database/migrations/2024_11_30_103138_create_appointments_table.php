@@ -16,6 +16,7 @@ return new class extends Migration
             $table->foreignId('user_id')->constrained()->onDelete('cascade');
             $table->foreignId('service_id')->constrained()->onDelete('cascade');
             $table->date('appointment_date');
+            $table->time('appointment_time');
             $table->string('payment_status')->default('not-paid');
             $table->text('notes')->nullable();
             $table->timestamps();

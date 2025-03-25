@@ -22,6 +22,11 @@
                         {{ \Carbon\Carbon::parse($appointment->appointment_date)->format('F d, Y h:i A') }}
                     </p>
 
+                    <p class="text-gray-600 mb-2">
+                        <i class="ri-time-line text-gray-500 mr-2"></i>
+                        <strong>Time:</strong>
+                        {{ \Carbon\Carbon::parse($appointment->appointment_time)->format('h:i A') }}
+                    </p>
                     <!-- Notes -->
                     <p class="text-gray-600 mb-4">
                         <i class="ri-file-text-line text-gray-500 mr-2"></i>

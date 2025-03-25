@@ -37,7 +37,7 @@
                     <div class="p-6">
                         <h2 class="text-2xl font-semibold text-gray-800 mb-2">{{ $service->name }}</h2>
                         <p class="text-lg text-gray-600 mb-4">
-                            <span class="font-bold text-green-600">Price:</span> ${{ number_format($service->price, 2) }}
+                            <span class="font-bold text-green-600">Price:</span> Php{{ number_format($service->price, 2) }}
                         </p>
                     </div>
                 </div>
@@ -70,7 +70,7 @@
                 <form wire:submit.prevent="bookAppointment">
                     @if ($selectedService)
                         <p class="text-gray-700 mb-2"><strong>Service:</strong> {{ $selectedService->name }}</p>
-                        <p class="text-gray-700 mb-4"><strong>Price:</strong> ${{ number_format($selectedService->price, 2) }}</p>
+                        <p class="text-gray-700 mb-4"><strong>Price:</strong> Php{{ number_format($selectedService->price, 2) }}</p>
                     @endif
                     <!-- Form Fields -->
                     <div class="mb-4">
@@ -79,6 +79,16 @@
                             type="date"
                             id="date"
                             wire:model.defer="appointmentDate"
+                            class="w-full px-4 py-2 border border-gray-300 rounded-lg"
+                            required>
+                    </div>
+
+                    <div class="mb-4">
+                        <label for="time" class="block text-gray-700 font-medium">Select Time</label>
+                        <input
+                            type="time"
+                            id="time"
+                            wire:model.defer="appointmentTime"
                             class="w-full px-4 py-2 border border-gray-300 rounded-lg"
                             required>
                     </div>

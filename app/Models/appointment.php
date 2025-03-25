@@ -12,6 +12,7 @@ class appointment extends Model
         'user_id',
         'service_id',
         'appointment_date',
+        'appointment_time',
         'notes',
         'status',
         'payment_status'

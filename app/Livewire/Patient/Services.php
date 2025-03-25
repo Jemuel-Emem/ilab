@@ -18,6 +18,7 @@ class Services extends Component
     public $showModal = false; // Modal visibility
     public $selectedService = null; // Holds the selected service details
     public $appointmentDate = ''; // Appointment date field
+    public $appointmentTime = '';
     public $notes = ''; // Additional notes for the appointment
 
     public function sasa()
@@ -37,6 +38,7 @@ class Services extends Component
         $this->selectedService = null; // Reset selected service
         $this->appointmentDate = ''; // Reset appointment date
         $this->notes = ''; // Reset notes field
+        $this->appointmentTime = '';
     }
 
     public function bookAppointment()
@@ -44,6 +46,7 @@ class Services extends Component
         // Validate input fields
         $this->validate([
             'appointmentDate' => 'required|date',
+            'appointmentTime' => 'required',
             'notes' => 'nullable|string|max:500',
         ]);
 
@@ -52,6 +55,7 @@ class Services extends Component
             'user_id' => auth()->id(), // Ensure the user is logged in
             'service_id' => $this->selectedService->id,
             'appointment_date' => $this->appointmentDate,
+            'appointment_time' => $this->appointmentTime,
             'notes' => $this->notes,
         ]);
 
