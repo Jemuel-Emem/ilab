@@ -62,9 +62,19 @@
 
                 <!-- Buttons -->
                 <div class="flex justify-end mt-4">
+                    {{-- <button wire:click="markAsPaid" class="bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-green-600">
+                        Paid Now
+                    </button> --}}
+
+                    @if($selectedAppointment->payment_status != 'paid')
                     <button wire:click="markAsPaid" class="bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-green-600">
                         Paid Now
                     </button>
+                @else
+                    <button disabled class="bg-gray-400 text-white px-4 py-2 rounded-lg cursor-not-allowed">
+                        Already Paid
+                    </button>
+                @endif
                     <button
                     onclick="printCertificate(
                         '{{ $selectedAppointment->user->name ?? 'N/A' }}',

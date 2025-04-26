@@ -18,8 +18,21 @@ class User extends Authenticatable
      * @var array<int, string>
      */
     protected $fillable = [
-        'name', 'email', 'password', 'phone_number', 'address', 'is_admin',
+        'name',
+        'age',
+        'gender',
+        'height',
+        'weight',
+        'blood_pressure',
+        'temperature',
+        'email',
+        'phone_number',
+        'address',
+        'password',   // (optional, if this is a User model)
+        'is_admin',   // (optional, if you are managing admins)
+        'lab_result'
     ];
+
 
     public function appointments()
     {

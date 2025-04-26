@@ -27,13 +27,23 @@
                         <strong>Time:</strong>
                         {{ \Carbon\Carbon::parse($appointment->appointment_time)->format('h:i A') }}
                     </p>
+
+                    <!-- Lab Result -->
+
                     <!-- Notes -->
                     <p class="text-gray-600 mb-4">
                         <i class="ri-file-text-line text-gray-500 mr-2"></i>
                         <strong>Price:</strong>
                         {{ $appointment->service->price }}
                     </p>
-
+                    @if($appointment->user->lab_result)
+                    <div class="mt-4">
+                        <a href="{{ asset('storage/' . $appointment->user->lab_result) }}" target="_blank"
+                            class="inline-block text-blue-600 hover:underline text-sm">
+                            <i class="ri-file-search-line mr-1"></i> View Lab Result
+                        </a>
+                    </div>
+                    @endif
                     <!-- Status -->
                     <span class="inline-block px-3 py-1 text-xs font-semibold rounded-full
                         {{ $appointment->status === 'approved' ? 'bg-green-100 text-green-800' : '' }}
