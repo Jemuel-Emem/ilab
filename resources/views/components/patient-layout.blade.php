@@ -56,10 +56,16 @@
 
             </nav>
 
-            <!-- User Profile Dropdown -->
-            <div class="relative" x-data="{ open: false }">
-              <a href="{{ route('logout') }}" class="text-white bg-red-700 p-1 rounded-md hover:bg-red-800">Logout</a>
-            </div>
+    <!-- User Profile -->
+<div class="flex items-center space-x-4">
+    @if (Auth::check())
+        <span class="text-white text-sm">
+            Hello, {{ Auth::user()->name }}
+        </span>
+    @endif
+    <a href="{{ route('logout') }}" class="text-white bg-red-700 p-1 rounded-md hover:bg-red-800">Logout</a>
+</div>
+
 
             <!-- Mobile Menu Button -->
             <button class="text-white md:hidden" @click="open = !open">
